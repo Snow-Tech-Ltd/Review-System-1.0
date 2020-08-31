@@ -1,0 +1,13 @@
+<h2 class="page-headers" style="text-align: center;">Reviews</h2>
+<div class="container">
+    <table>
+        <tr>
+            <th>Review</th>
+            <th>Rating</th>
+        </tr>
+        <tr *ngFor = "let review of reviews">
+            <td>{{review.review}}</td>
+            <td>{{review.rating}}</td>
+        </tr>
+    </table>
+</div>

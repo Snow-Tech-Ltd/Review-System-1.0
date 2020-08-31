@@ -1,0 +1,19 @@
+<h2 class="page-headers" style="text-align: center;">Review</h2>
+
+<mat-card>
+    <mat-label>Rating</mat-label><br>
+    <ng-container *ngFor="let star of stars">
+        <app-star (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)" [starId]="star" [rating]="hoverState || rating" ></app-star>
+    </ng-container><br><br>
+    
+    <form (submit)="onReviewSubmit(reviewForm)"  #reviewForm="ngForm">
+        <mat-form-field >
+        <mat-label>Comment</mat-label>
+        <input  matInput type="text" rows="4" name="review" ngModel required #review="ngModel">
+        <mat-error *ngIf='review.invalid'>Please write review</mat-error>
+        <br>
+        </mat-form-field>
+        <br><br>
+        <button mat-raised-button color="primary">Submit</button>
+    </form>
+</mat-card>  
