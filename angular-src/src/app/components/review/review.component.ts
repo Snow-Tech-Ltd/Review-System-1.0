@@ -19,7 +19,7 @@ export class ReviewComponent implements OnInit {
     }
 
     stars=[1,2,3,4,5];
-    rating = 1;
+    rating = 0;
     hoverState=0;
 
     onStarEnter(starId : number) {
@@ -36,9 +36,19 @@ export class ReviewComponent implements OnInit {
 
     onReviewSubmit(form: NgForm){
 
-      if(form.invalid){
-        return;
+    if(form.invalid && this.rating == 0){
+      this.snackBar.open('Please give rating!!!', 'Close');
+      return;
     } 
+
+    if(form.invalid){
+      return;
+    }
+
+    if(this.rating == 0){
+      this.snackBar.open('Please give rating!!!', 'Close');
+      return;
+    }
 
     const newReview = {
       review: form.value.review,
