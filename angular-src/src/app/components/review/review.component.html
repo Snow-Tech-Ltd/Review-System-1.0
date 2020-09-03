@@ -1,7 +1,7 @@
 <h2 class="page-headers" style="text-align: center;">Review</h2>
 
 <mat-card>
-    <mat-label>Rating</mat-label><br>
+    <mat-label>Rating</mat-label><br><br>
     <ng-container *ngFor="let star of stars">
         <app-star (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)" [starId]="star" [rating]="hoverState || rating" ></app-star>
     </ng-container><br><br>
@@ -9,7 +9,18 @@
     <form (submit)="onReviewSubmit(reviewForm)"  #reviewForm="ngForm">
         <mat-form-field >
         <mat-label>Comment</mat-label>
-        <input  matInput type="text" rows="4" name="review" ngModel required #review="ngModel">
+        <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            maxlength="500"
+            rows="5"
+            name="review"
+            ngModel
+            #review="ngModel"
+            required></textarea>
+        <mat-hint align="end">Max Characters: {{review.value?.length || 0}}/500</mat-hint>    
         <mat-error *ngIf='review.invalid'>Please write review</mat-error>
         <br>
         </mat-form-field>
