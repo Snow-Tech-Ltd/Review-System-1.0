@@ -8,17 +8,19 @@ import { GetReviewsService } from '../../../services/get-reviews.service';
 })
 export class DisplayComponent implements OnInit {
 
-  reviews 
+  reviews
   review: string;
   rating: number;
-  
+
   constructor(private reviewService: GetReviewsService) { }
 
   ngOnInit(): void {
     this.reviewService.getReviews()
-      .subscribe( reviews => 
+      .subscribe( reviews =>
         this.reviews = reviews );
   }
+
+
 
 
 

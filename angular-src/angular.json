@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "angular-src"
+  "defaultProject": "angular-src",
+  "cli": {
+    "analytics": false
+  }
 }
