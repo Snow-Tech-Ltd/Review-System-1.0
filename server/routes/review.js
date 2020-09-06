@@ -22,8 +22,21 @@ router.post('/', (req, res, next) => {
 
 
 router.get('/display', (req, res) => {
+    const pageOptions = {
+        page: parseInt(req.query.page, 10) || 0,
+        limit: parseInt(req.query.limit, 10) || 4
+    }
+    
     Review.find()
-    .then( reviews => res.json(reviews) )   
+        .skip(pageOptions.page * pageOptions.limit)
+        .limit(pageOptions.limit)
+        .exec(function (err, doc) {
+            if(err) { res.status(500).json(err); return; };
+            res.status(200).json(doc);
+        });
+
+    // Review.find()
+    // .then( reviews => res.json(reviews) )   
 });
 
 module.exports = router;

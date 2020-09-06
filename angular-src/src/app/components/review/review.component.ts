@@ -37,7 +37,11 @@ export class ReviewComponent implements OnInit {
     onReviewSubmit(form: NgForm){
 
     if(form.invalid && this.rating == 0){
-      this.snackBar.open('Please give rating!!!', 'Close');
+      this.snackBar.open('Please give rating!!!', 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
       return;
     } 
 
@@ -46,7 +50,11 @@ export class ReviewComponent implements OnInit {
     }
 
     if(this.rating == 0){
-      this.snackBar.open('Please give rating!!!', 'Close');
+      this.snackBar.open('Please give rating!!!', 'Close' , {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
       return;
     }
 
