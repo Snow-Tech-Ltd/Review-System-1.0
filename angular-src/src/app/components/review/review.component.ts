@@ -21,6 +21,7 @@ export class ReviewComponent implements OnInit {
     stars=[1,2,3,4,5];
     rating = 0;
     hoverState=0;
+    flag=0;
 
     onStarEnter(starId : number) {
       this.hoverState=starId;
@@ -38,8 +39,9 @@ export class ReviewComponent implements OnInit {
 
     if(form.invalid && this.rating == 0){
       this.snackBar.open('Please give rating!!!', 'Close');
+      this.flag=1;
       return;
-    } 
+    }
 
     if(form.invalid){
       return;
@@ -47,6 +49,7 @@ export class ReviewComponent implements OnInit {
 
     if(this.rating == 0){
       this.snackBar.open('Please give rating!!!', 'Close');
+      this.flag=1;
       return;
     }
 
@@ -57,7 +60,7 @@ export class ReviewComponent implements OnInit {
 
     // Add review
     this.addReviewService.addReview(newReview).subscribe(data => {
-      
+
       if(data.sucess){
         this.snackBar.open('Review has been saved successfully!!!', 'Close');
       }

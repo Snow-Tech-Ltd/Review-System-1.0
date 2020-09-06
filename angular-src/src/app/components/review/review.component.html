@@ -3,9 +3,9 @@
 <mat-card>
     <mat-label>Rating</mat-label><br><br>
     <ng-container *ngFor="let star of stars">
-        <app-star (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)" [starId]="star" [rating]="hoverState || rating" ></app-star>
+        <app-star (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)" [starId]="star" [rating]="hoverState || rating" [flag]="flag"></app-star>
     </ng-container><br><br>
-    
+
     <form (submit)="onReviewSubmit(reviewForm)"  #reviewForm="ngForm">
         <mat-form-field >
         <mat-label>Comment</mat-label>
@@ -20,11 +20,11 @@
             ngModel
             #review="ngModel"
             required></textarea>
-        <mat-hint align="end">Max Characters: {{review.value?.length || 0}}/500</mat-hint>    
+        <mat-hint align="end">Max Characters: {{review.value?.length || 0}}/500</mat-hint>
         <mat-error *ngIf='review.invalid'>Please write review</mat-error>
         <br>
         </mat-form-field>
         <br><br>
         <button mat-raised-button color="primary">Submit</button>
     </form>
-</mat-card>  
+</mat-card>

@@ -1,8 +1,16 @@
 .star-rating-filled {
     fill: #3F51B5 ;
   }
-  
+
   .star-rating-blank {
-    fill: #afa6a6;
+    fill:  #afa6a6;
   }
-  
+
+  .star-rating-invalid{
+    fill: transparent;
+    /* box-shadow:0px 10px 50px rgba(37,50,233,1); */
+    /* border: 1px solid red; */
+    stroke:rgb(253, 71, 71);
+    stroke-width: 5px;
+
+}
