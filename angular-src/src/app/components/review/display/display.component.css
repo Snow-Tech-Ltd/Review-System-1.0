@@ -16,6 +16,10 @@ table {
     background-color: #dddddd;
   }
 
+.mat-raised-button{
+    display: flex;
+    margin: 0 auto;
+  }
 
 .first{
   width: 500px;
@@ -29,4 +33,29 @@ table {
 
 .star-rating-blank {
   fill: #afa6a6;
+}
+
+section {
+  display: table; 
+}
+
+.button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
 }

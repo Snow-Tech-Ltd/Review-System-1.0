@@ -10,6 +10,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     MatTableModule,
     MatDialogModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ],
   providers: [ AddReviewService, HttpClientModule, GetReviewsService ],
   bootstrap: [AppComponent]
