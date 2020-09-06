@@ -1,31 +1,19 @@
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 500px;
-    margin-left: 100px;
-    margin-right: 100px;
-  }
 
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
 
 .mat-raised-button{
     display: flex;
     margin: 0 auto;
+    width: 100%;
+
   }
 
-.first{
+.review-display-body  {
   width: 500px;
   margin-left: 20px;
   height: 500px;
   overflow:auto;
+  margin-right: 0px;
+  padding-right: 0px  ;
 }
 .star-rating-filled {
   fill: #3F51B5 ;
@@ -35,27 +23,30 @@ table {
   fill: #afa6a6;
 }
 
-section {
-  display: table; 
+.review-page{
+padding: 0%;
 }
 
-.button-row {
-  display: table-cell;
-  width: 490px;
-}
-
-.button-row .mat-button-base {
-  margin: 8px 8px 8px 0;
-}
-
-.flex-container {
+.card-subtitle{
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  font-weight: bold;
+  color: #afa6a6;
+  margin-top: 0mm;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
-  width: 120px;
+.card-title{
+  margin-bottom: 0mm;
+  font-size: 125%;
+  font-weight: bold;
 }
+
+.review-individual{
+
+  margin-top: 15px;
+  margin-right: 0px;
+}
+
+.card-action{
+  margin-top: 10px;
+}
+
